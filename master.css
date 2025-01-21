@@ -6,6 +6,7 @@
 body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .container {
@@ -14,8 +15,36 @@ body {
   background-image: url("img/background.png");
   height: 200px;
   bottom: 50%;
-  animation: backgroundAnime 600s infinite linear;
+  overflow: visible;
+  animation-name: backgroundAnime;
+  animation-duration: 600s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* animation: 600s infinite linear; */
   /* background-repeat: no-repeat; */
+  > h1,
+  h2 {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+.dino {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url("img/dino.png");
+  background-size: cover;
+  background-position: center;
+  bottom: 0;
+  left: 30px;
+}
+.cactus {
+  background-image: url(img/cactus.png);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 0;
 }
 
 @keyframes backgroundAnime {
