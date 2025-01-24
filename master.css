@@ -7,6 +7,7 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  /* position: relative; */
 }
 
 .container {
@@ -47,6 +48,64 @@ body {
   bottom: 0;
 }
 
+.me {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  top: 20px;
+  right: 30px;
+  background-image: url("img/me.jpg");
+  background-size: cover;
+  animation: borderAnimation 0.9s ease infinite alternate;
+}
+
+.me:hover .social-icons {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.social-icons {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  bottom: -50px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.social-icons a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.9s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons img {
+  width: 18px;
+  height: 18px;
+}
+@keyframes borderAnimation {
+  from {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  to {
+    border-radius: 90% 10% 22% 78% / 47% 70% 30% 53%;
+  }
+}
 @keyframes backgroundAnime {
   from {
     background-position: 0;
